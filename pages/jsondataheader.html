@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Send Data with Headers</title>
+</head>
+<body>
+  <button id="sendButton">Send Data</button>
+
+  <script>
+    document.getElementById("sendButton").addEventListener("click", async () => {
+      const dataToSend = { id: 123, name: "Alice" };
+      const headers = new Headers();
+      headers.append('Custom-Header', 'Custom Value');
+
+      const response = await fetch('/jsondataheader-submit', {
+        method: 'POST',
+        headers: headers,
+        body: JSON.stringify(dataToSend)
+      });
+
+      const result = await response.json();
+      console.log(result);
+    });
+  </script>
+</body>
+</html>

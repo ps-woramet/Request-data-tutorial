@@ -1,0 +1,18 @@
+{
+  "name": "request-data-tutorial",
+  "version": "1.0.0",
+  "description": "ข้อมูลที่ส่งมา (Request Data) ในแอปพลิเคชันเว็บส่วนใหญ่มาจากไคลเอนต์ (Client) ที่ทำการส่งคำขอ (Request) ไปยังเว็บเซิร์ฟเวอร์ (Server) โดยใช้โปรโตคอล HTTP หรือ HTTPS ซึ่งเป็นโปรโตคอลในการสื่อสารระหว่างเว็บเซิร์ฟเวอร์และไคลเอนต์.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1"
+  },
+  "devDependencies": {}
+}

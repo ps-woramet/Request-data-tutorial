@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Send JSON Data</title>
+</head>
+<body>
+  <button id="sendButton">Send JSON Data</button>
+  <p id = 'myP'></p>
+  <script>
+    document.getElementById("sendButton").addEventListener("click", async () => {
+      const dataToSend = { id: 123, name: "Alice" };
+      const response = await fetch('/jsondata-submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(dataToSend)
+      });
+      const result = await response.json();
+      const myP = document.getElementById("myP");
+      var textId = document.createTextNode(result.data.id);
+      var br = document.createElement("br");
+      myP.appendChild(textId)
+      myP.appendChild(br)
+      var textName = document.createTextNode(result.data.name);
+      myP.appendChild(textName)
+    });
+  </script>
+</body>
+</html>
